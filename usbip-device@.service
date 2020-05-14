@@ -1,7 +1,7 @@
 [Unit]
 Description=USB/IP Device %I
-Requires=usbipd
-After=usbipd
+Requires=usbipd.service
+After=usbipd.service
 
 [Service]
 EnvironmentFile=/etc/usbip-devices/%i.conf

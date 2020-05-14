@@ -3,17 +3,17 @@ sysconfdir=/etc
 unitdir=$(sysconfdir)/systemd/system
 
 UNITS = \
-	usbipd.service
+	usbipd.service \
 	usbip-device@.service
 
 SCRIPTS = \
-	configure-usb-device.sh \
-	remove-usb-device.sh
+	configure-usbip-device.sh \
+	remove-usbip-device.sh
 
 all:
 
 install: install-scripts install-units
-	mkdir -p $(DESTDIR)$(sysconfdir)/usb-devices
+	mkdir -p $(DESTDIR)$(sysconfdir)/usbip-devices
 
 install-scripts: $(SCRIPTS)
 	mkdir -p $(DESTDIR)$(sbindir)
