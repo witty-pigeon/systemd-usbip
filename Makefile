@@ -1,18 +1,19 @@
-sbindir=/sbin
+sbindir=/usr/sbin
 sysconfdir=/etc
 unitdir=$(sysconfdir)/systemd/system
 
 UNITS = \
-	usb-gadget@.service
+	usbipd.service
+	usbip-device@.service
 
 SCRIPTS = \
-	configure-gadget.sh \
-	remove-gadget.sh
+	configure-usb-device.sh \
+	remove-usb-device.sh
 
 all:
 
 install: install-scripts install-units
-	mkdir -p $(DESTDIR)$(sysconfdir)/gadget
+	mkdir -p $(DESTDIR)$(sysconfdir)/usb-devices
 
 install-scripts: $(SCRIPTS)
 	mkdir -p $(DESTDIR)$(sbindir)

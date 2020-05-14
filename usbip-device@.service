@@ -1,0 +1,13 @@
+[Unit]
+Description=USB/IP Device %I
+Requires=usbipd
+After=usbipd
+
+[Service]
+EnvironmentFile=/etc/usbip-devices/%i.conf
+RemainAfterExit=yes
+ExecStart=/usr/sbin/configure-usbip-device %i
+ExecStop=/usr/sbin/remove-usbip-device %i
+
+[Install]
+WantedBy=multi-user.target
