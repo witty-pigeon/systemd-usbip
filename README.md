@@ -10,7 +10,7 @@ systemd unit into `/etc/systemd/system`.
 
 ## Configuration
 
-Create one or files in `/etc/usbip-device` named `<device_name>.conf`.
+Create one or files in `/etc/usbip-devices` named `<device_name>.conf`.
 These files **must** contain the following configuration keys:
 
 
