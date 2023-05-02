@@ -4,11 +4,14 @@ unitdir=$(sysconfdir)/systemd/system
 
 UNITS = \
 	usbipd.service \
-	usbip-device@.service
+	usbip-device@.service \
+	usbip-import@.service
 
 SCRIPTS = \
 	configure-usbip-device.sh \
-	remove-usbip-device.sh
+	remove-usbip-device.sh \
+	attach-usbip-device.sh \
+	detach-usbip-device.sh
 
 all:
 
