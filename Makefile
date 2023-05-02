@@ -3,15 +3,15 @@ sysconfdir=/etc
 unitdir=$(sysconfdir)/systemd/system
 
 UNITS = \
-	usbipd.service \
-	usbip-device@.service \
-	usbip-import@.service
+	server/usbipd.service \
+	server/usbip-device@.service \
+	client/usbip-import@.service
 
 SCRIPTS = \
-	configure-usbip-device.sh \
-	remove-usbip-device.sh \
-	attach-usbip-device.sh \
-	detach-usbip-device.sh
+	server/configure-usbip-device.sh \
+	server/remove-usbip-device.sh \
+	client/attach-usbip-device.sh \
+	client/detach-usbip-device.sh
 
 all:
 
