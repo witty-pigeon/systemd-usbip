@@ -21,7 +21,8 @@ install: install-scripts install-units
 install-scripts: $(SCRIPTS)
 	mkdir -p $(DESTDIR)$(sbindir)
 	for s in $(SCRIPTS); do \
-		install -m 755 $$s $(DESTDIR)$(sbindir)/$${s%.sh}; \
+		script_filename=$$(basename $$s); \
+		install -m 755 $$s $(DESTDIR)$(sbindir)/$${script_filename%.sh}; \
 	done
 
 install-units: $(UNITS)
