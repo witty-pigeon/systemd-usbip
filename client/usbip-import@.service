@@ -3,10 +3,10 @@ Description=USB/IP Device import %I
 
 [Service]
 EnvironmentFile=/etc/usbip-devices/%i.import.conf
-RemainAfterExit=yes
 ExecStartPre=/sbin/modprobe vhci_hcd
 ExecStart=/usr/sbin/attach-usbip-device %i
 ExecStop=/usr/sbin/detach-usbip-device %i
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
